@@ -8,7 +8,7 @@ class Venda:
     def calcular_valor_total(self):
         total = 0.0
         for item in self._cliente.get_carrinho():
-            total += item.get_valor_total()
+            total += item.get_produto().get_preco()
 
         self._valor_total = total
         self._cashback = total * 0.05 
