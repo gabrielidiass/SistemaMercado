@@ -1,4 +1,4 @@
-transfira essa modelagem para o python seguindo os 4 pilares da orientaçao a objetos
+
 # Pessoa
 private string nome 
 private string cpf
