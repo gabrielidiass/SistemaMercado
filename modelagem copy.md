@@ -1,31 +1,24 @@
-- 
-
-
+transfira essa modelagem para o python seguindo os 4 pilares da orientaçao a objetos
 # Pessoa
 private string nome 
 private string cpf
 
 # Cliente (herda de pessoa)
-private ItemVenda carrinho
+private List<ItemVenda> carrinho
 private double cashback 
 - exibirDados()
-- somarCashback()
-- calcularCashback()
-
 
 # Funcionário (herda de pessoa)
 private string cargo
-private List<Venda> vendas;
-- adicionaVenda()
+private double comissao
 - exibirDados()
 
 # Venda
-private double valor_total
-private double cashback
-private localDate data
-private ItemVenda carrinho
-- adicionarVenda()
-- calcularTotal()
+private double valor_total;
+    private double cashback;
+    private Cliente cliente;
+    private Funcionario funcionario;
+    private LocalDate data (now.);
 
 # Produto
 private String nome 
@@ -34,5 +27,3 @@ private double preço
 # Item Venda
 private Produto produto
 private int quantidade
-
-revise quais pilares da OO estao sendo abordados e quais nao estao

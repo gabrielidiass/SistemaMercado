@@ -1,34 +1,26 @@
-package heranca;
 
 import modelo.Cliente;
 import modelo.Funcionario;
+import modelo.Impressora;
 import modelo.ItemVenda;
 import modelo.Produto;
+import modelo.Venda;
 
-public class CadastrosIniciais {
-    public static void Cadastro(String[] args) {
+public class Heranca {
+    public static void main(String[] args) {
         // Classe usada para cadastrar os produtos inicialmente
 
         Produto agua = new Produto("Água Mineral", 2.99);
         Produto arroz = new Produto("Arroz Branco 5kg", 18.50);
-        Produto feijao = new Produto("Feijão Carioca 1kg", 7.80);
-        Produto leite = new Produto("Leite Integral 1L", 5.99);
-        Produto pao = new Produto("Pão Francês", 0.75);
-        Produto cafe = new Produto("Café Torrado e Moído 500g", 12.90);
         Produto acucar = new Produto("Açúcar Refinado 1kg", 3.50);
-        Produto oleo = new Produto("Óleo de Soja 900ml", 8.20);
         Produto ovos = new Produto("Ovos Brancos Dúzia", 9.00);
         Produto sabao = new Produto("Sabão em Pó 1kg", 15.00);
 
         Cliente joao = new Cliente("João", "001.723.789.79");
-        Cliente maria = new Cliente("Maria Souza", "123.456.789-01");
-        Cliente pedro = new Cliente("Pedro Santos", "987.654.321-09");
-       
-        
-        Funcionario funcionario1 = new Funcionario("Ana Paula", "111.222.333-44", "Caixa");
-        Funcionario funcionario2 = new Funcionario("Bruno Costa", "555.666.777-88", "Repositor");
-        Funcionario funcionario3 = new Funcionario("Carla Mendes", "999.000.111-22", "Gerente");
 
+        Funcionario ana_paula = new Funcionario("Funcionaria", "111.222.333-44", "Caixa");
+        ana_paula.setNome("Ana Paula");
+        Impressora.imprimirDados(ana_paula);
 
         ItemVenda item1 = new ItemVenda(agua, 12);
         ItemVenda item2 = new ItemVenda(arroz, 1);
@@ -43,7 +35,13 @@ public class CadastrosIniciais {
         joao.adicionarProduto(item4);
         joao.adicionarProduto(item5);
 
-        
+        // Realizar venda
+        Venda venda1 = new Venda(joao, ana_paula);
 
+        Impressora.imprimirDados(venda1);
+        Impressora.imprimirDados(joao);
+
+        // pos comissao
+         Impressora.imprimirDados(ana_paula);
     }
 }

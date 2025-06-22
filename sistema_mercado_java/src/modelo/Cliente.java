@@ -1,6 +1,7 @@
 
 package modelo;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Cliente extends Pessoa {
     }
 
     public void setCashback(double cashback) {
-        this.cashback = cashback;
+        this.cashback += cashback;
     }
 
     public List<ItemVenda> getCarrinho() {
@@ -39,5 +40,21 @@ public class Cliente extends Pessoa {
 
     public void setCarrinho(List<ItemVenda> carrinho) {
         this.carrinho = carrinho;
+    }
+
+    @Override
+    public String exibirDados() {
+        String aux = "Dados do cliente";
+        aux += "\nNome: " + getNome();
+        aux += "\nCPF: " + getCpf();
+        aux += "\nCashback acumulado: R$" + cashback;
+        aux += "\nCarrinho:";
+        if (carrinho != null) {
+            for (ItemVenda item : carrinho) {
+                aux += "\n  - " + item.getProduto().getNome();
+                aux +=  ", " + item.getQuantidade() + " un.";
+            }
+        }
+        return aux;
     }
 }
